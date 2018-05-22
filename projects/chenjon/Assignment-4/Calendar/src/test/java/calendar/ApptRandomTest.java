@@ -89,18 +89,50 @@ public class ApptRandomTest {
 			 if(!appt.getValid())continue;
 			for (int i = 0; i < NUM_TESTS; i++) {
 					String methodName = ApptRandomTest.RandomSelectMethod(random);
-					   if (methodName.equals("setTitle")){
+					   	if (methodName.equals("setTitle")){
 						   String newTitle=(String) ValuesGenerator.getString(random);
 						   appt.setTitle(newTitle);						   
 						}
-					   else if (methodName.equals("setRecurrence")){
+					   	else if (methodName.equals("setRecurrence")){
 						   int sizeArray=ValuesGenerator.getRandomIntBetween(random, 0, 8);
 						   int[] recurDays=ValuesGenerator.generateRandomArray(random, sizeArray);
 						   int recur=ApptRandomTest.RandomSelectRecur(random);
 						   int recurIncrement = ValuesGenerator.RandInt(random);
 						   int recurNumber=ApptRandomTest.RandomSelectRecurForEverNever(random);
 						   appt.setRecurrence(recurDays, recur, recurIncrement, recurNumber);
-						}				
+
+						}
+						else if(methodName.equals("setValid")){
+							int startHour2=ValuesGenerator.getRandomIntBetween(random, -24, 24);
+							int startMinute2=ValuesGenerator.getRandomIntBetween(random, -24, 24);
+							int startDay2=ValuesGenerator.getRandomIntBetween(random, -24, 24);
+							int startMonth2=ValuesGenerator.getRandomIntBetween(random, 0, 21);
+							int startYear2=ValuesGenerator.getRandomIntBetween(random, 2000, 2030);
+
+							Appt appt2 = new Appt(startHour2,
+		                  	startMinute2 ,
+			                startDay2 ,
+			                startMonth2 ,
+			                startYear2 ,
+			                title,
+		                 	description,
+		                 	emailAddress);
+		                 	appt2.setValid();
+						}
+						else if(methodName.equals("setRecurDays")){
+							int sizeArray=ValuesGenerator.getRandomIntBetween(random, 0, 8);
+							int[] recurDays=ValuesGenerator.generateRandomArray(random, sizeArray);
+							int recur=ApptRandomTest.RandomSelectRecur(random);
+						 	int recurIncrement = ValuesGenerator.RandInt(random);
+						 	int recurNumber=ApptRandomTest.RandomSelectRecurForEverNever(random);
+						   	appt.setRecurrence(recurDays, recur, recurIncrement, recurNumber);
+						}
+						else if(methodName.equals("isOn")){
+							int startDay3=ValuesGenerator.getRandomIntBetween(random, 1, 11);
+							int startMonth3=ValuesGenerator.getRandomIntBetween(random, 1, 11);
+							int startYear3=ValuesGenerator.getRandomIntBetween(random, 2018, 2018);
+							appt.isOn(startDay3, startMonth3, startYear3);
+						}
 				}
 				
 				 elapsed = (Calendar.getInstance().getTimeInMillis() - startTime);
