@@ -1,0 +1,8 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+Calendar,calendar,DateOutOfRangeException,7,0,0,0,4,0,2,0,2,0
+Calendar,calendar,CalendarMain,357,0,4,0,76,0,4,0,2,0
+Calendar,calendar,XmlParserErrorHandler,79,0,2,0,14,0,6,0,5,0
+Calendar,calendar,Appt,186,183,24,20,36,63,34,24,19,17
+Calendar,calendar,CalDay,290,66,25,3,55,21,25,5,11,5
+Calendar,calendar,CalendarUtil,5,86,1,9,2,11,2,7,1,3
+Calendar,calendar,DataHandler,985,0,80,0,260,0,57,0,16,0
